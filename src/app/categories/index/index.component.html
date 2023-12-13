@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Les catégories</h2>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+      <input matInput (keyup)="filter($event)" placeholder="Rechercher">
+    </div>
+    <div>
+        <app-createCat></app-createCat>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Nom</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let categorie of categories.data">
+        <td><img [src]="categorie.imagecategorie" alt="" width="80" height="80" /></td>
+        <td>{{ categorie.nomcategorie }}</td>
+        <td>
+          <app-view [categorieId]="categorie._id"></app-view>
+          <app-edit [categorieId]="categorie._id"></app-edit>
+          <button type="button" (click)="deleteCategorie(categorie._id)" class="btn btn-default">
+            <i class="bi bi-trash-fill" style="color:red"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

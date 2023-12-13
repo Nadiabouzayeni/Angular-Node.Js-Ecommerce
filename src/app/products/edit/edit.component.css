@@ -1,0 +1,12 @@
+/* Appliquer un arrière-plan gris au formulaire */
+form {
+    background-color: #d7d1d1; /* Choisissez la nuance de gris que vous préférez */
+    padding: 20px; /* Ajoute un peu d'espace à l'intérieur du formulaire */
+  }
+  
+  /* Changer la couleur du texte dans les champs de formulaire */
+  input[type="text"],
+  select {
+    color: blueviolet; /* Choisissez la couleur de texte que vous préférez */
+  }
+  

@@ -1,0 +1,63 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-purple" (click)="openModal()">
+    <i class="bi bi-plus-circle-fill"></i>
+    New product
+</button>
+
+    <!-- Modal -->
+    <div class="modal" tabindex="-1"
+    role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h4 class="modal-title">Add product</h4>
+    <button type="button" class="btn btn-default" arialabel="Close" (click)="closeModal()"><span ariahidden="true">&times;</span></button>
+    </div>
+    <div class="modal-body">
+    <template *ngTemplateOutlet="formProduct"></template>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-default"
+    (click)="closeModal()" >Close</button>
+    </div>
+    </div>
+    </div>
+    </div>
+   <!-- Form -->
+<ng-template #formProduct>
+    <form (ngSubmit)="ajoutarticle()" class="row g-3">
+      <div class="col-md-6">
+        <label for="reference" class="form-label">Reference</label>
+        <input type="text" class="form-control" id="reference" name="reference" placeholder="Reference" [(ngModel)]="products.reference">
+      </div>
+      <div class="col-md-6">
+        <label for="designation" class="form-label">Designation</label>
+        <input type="text" class="form-control" id="designation" name="designation" placeholder="Designation" [(ngModel)]="products.designation">
+      </div>
+      <div class="col-md-6">
+        <label for="prix" class="form-label">Price</label>
+        <input type="number" class="form-control" id="prix" name="prix" placeholder="Price" [(ngModel)]="products.prix">
+      </div>
+      <div class="col-md-6">
+        <label for="qtestock" class="form-label">Quantity in stock</label>
+        <input type="text" class="form-control" id="qtestock" name="qtestock" placeholder="Quantity in stock" [(ngModel)]="products.qtestock">
+      </div>
+      <div class="col-md-6">
+        <label for="marque" class="form-label">Mark</label>
+        <input type="text" class="form-control" id="marque" name="marque" placeholder="Mark" [(ngModel)]="products.marque">
+      </div>
+      <div class="col-md-6">
+        <label for="scategorieID" class="form-label">Category</label>
+        <select name="scategorieID" class="form-control" [(ngModel)]="products.scategorieID">
+          <option *ngFor="let sd of scategories" [value]="sd._id">{{sd.nomscategorie}}</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <file-pond #myPond [options]="pondOptions"></file-pond>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-success" (click)="ajoutarticle()">Save</button>
+      </div>
+    </form>
+  </ng-template>
+  

@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Les sous-catégories</h2>
+    <div>
+        <app-createscat></app-createscat>
+    </div>
+    
+    <table class="table table-bordered table-hover"> <!-- Ajout des classes Bootstrap pour améliorer l'affichage -->
+        <thead class="table"> <!-- Utilisation d'une classe Bootstrap pour changer la couleur de l'en-tête -->
+            <tr>
+                <th>Image</th>
+                <th>Nom</th>
+                <th width="250px">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let scategorie of scategories.data">
+                <td><img [src]="scategorie.imagescategorie" alt="" width="80" height="80" class="img-thumbnail" /></td> <!-- Ajout de la classe Bootstrap pour encadrer l'image -->
+                <td>{{ scategorie.nomscategorie }}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Actions"> <!-- Utilisation d'une classe Bootstrap pour aligner les boutons -->
+                        <app-view [scategorieId]="scategorie._id"></app-view>
+                        <app-edit [scategorieId]="scategorie._id"></app-edit>
+                        <button type="button" (click)="deleteScategorie(scategorie._id)" class="btn btn-danger"> <!-- Utilisation d'une classe Bootstrap pour changer la couleur du bouton -->
+                            <i class="bi bi-trash-fill"></i> 
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

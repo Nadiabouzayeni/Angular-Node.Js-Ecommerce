@@ -1,0 +1,12 @@
+.container {
+    margin-bottom: 50px; /* Ajoute de l'espace en bas du tableau */
+    position: relative; /* Permet de positionner le pied de page par rapport à ce conteneur */
+  }
+  
+  footer {
+   /* position: absolute; /* Positionne le pied de page par rapport au conteneur */
+    bottom: 0; /* Le pied de page est aligné en bas du conteneur */
+    width: 100%; /* Le pied de page occupe toute la largeur du conteneur */
+    margin-top: 20px; /* Ajoute de l'espace entre le tableau et le pied de page */
+  }
+  

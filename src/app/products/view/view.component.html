@@ -1,0 +1,45 @@
+<!-- Button trigger modal -->
+<button class="btn btn-default" (click)="openModal()">
+    <i class="bi bi-info-square-fill"></i>
+   
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Product Detail</h4>
+          <button type="button" class="btn btn-default" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+          <div class="row">
+            <div class="col-md-5 p-5">
+              <div class="card" style="width: 10rem;">
+                <img src={{products.imageart}} class="card-img-top" alt="...">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card" style="width: 10rem;">
+                <div class="card-body bg-success">
+                <div class="card-body" >
+                  <p class="card-text">Reference : {{products.reference}}</p>
+                  <h6 class="card-text">Mark :{{products.marque}}</h6>
+                  <h6 class="card-title">Price :{{products.prix}} TND</h6>
+                  <p class="card-text">Designation :{{products.designation}}</p>
+                  <p class="card-text">Quantity available : {{products.qtestock}}</p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" (click)="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

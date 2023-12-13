@@ -1,0 +1,19 @@
+.padding-0 {
+    padding-right: 0;
+    padding-left: 1;
+    }
+    .card-header{
+    height: 100px;
+    }
+
+    .btn-purple {
+        color: #fff;
+        background-color: #800080;
+        border-color: #800080;
+    }
+    
+    .btn-purple:hover {
+        background-color: #cac7cc;
+        border-color: #9932CC;
+    }
+    

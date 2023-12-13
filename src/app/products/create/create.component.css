@@ -1,0 +1,15 @@
+.btn-purple {
+    color: #fff;
+    background-color: #800080;
+    border-color: #800080;
+}
+
+.btn-purple:hover {
+    background-color: #cc3299;
+    border-color: #cc3299;
+}
+.modal-body {
+    background-color: rgb(242, 247, 242); /* Couleur de fond gris */
+    padding: 20px; /* Ajout de rembourrage pour l'espace intérieur */
+  }
+  
